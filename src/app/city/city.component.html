@@ -3,6 +3,10 @@
     <div>Nombre: {{ city.name }} </div>
     <div>Población: {{ city.population }} </div>
     <div>Descripcion: {{ city.description }} </div>
+
+    <button (click)="gotoInicio()">Inicio</button>
+    <button (click)="gotoCurso1()">Curso 1</button>
+
 </div>
 <div *ngIf="!city">
     No se indico ciudad.

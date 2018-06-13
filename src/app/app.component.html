@@ -1,7 +1,8 @@
 <div class="header">
+  Debug de ruta: {{ url }}
   <nav>
-    <a [routerLink]="['home']">Inicio</a> |
-    <a [routerLink]="['about']">Acerca de...</a> |
+    <a [routerLink]="['home']" [class.selected]="url === 'home'" >Inicio</a> |
+    <a [routerLink]="['about']"[ngClass]="{ 'selected': (url === 'about') }" >Acerca de...</a> |
     <a [routerLink]="['cities/MAD']">Madrid</a> |
     <a [routerLink]="['cities/ALC']">Alicante</a> |
     <a [routerLink]="['courses/1']">Curso 1. Nanotecnologia</a> |

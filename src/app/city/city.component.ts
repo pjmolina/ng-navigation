@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from '../domain/city';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CityService } from '../services/city.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class CityComponent implements OnInit {
   city: City;
 
   constructor(private activedRoute: ActivatedRoute,
+              private router: Router,
               private cityService: CityService) { }
 
   ngOnInit() {
@@ -26,4 +27,11 @@ export class CityComponent implements OnInit {
     this.city = this.cityService.getCityById(id);
   }
 
+  gotoInicio() {
+    this.router.navigate(['home']);
+  }
+
+  gotoCurso1() {
+    this.router.navigate(['courses/1']);
+  }
 }
