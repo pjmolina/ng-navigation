@@ -1,0 +1,12 @@
+nav a {
+  font-family: Arial;
+  padding: 1rem;
+  border: solid 1px #ccc;
+  color: #777;
+  text-decoration: none;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: #dedede;
+}
