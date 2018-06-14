@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, UrlSegment } from '@angular/router';
+import { ActivatedRoute, UrlSegment, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map, reduce } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -10,18 +12,19 @@ export class AppComponent implements OnInit {
   title = 'app';
   url: string;
 
-  constructor(private activatedRoute: ActivatedRoute) {
-    this.url = 'about';
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
-    this.activatedRoute.fragment.subscribe(
-      url => this.changeCss(url)
+    this.router.events.subscribe(
+      d => {
+        this.url = this.router.url;
+      }
     );
+
   }
 
   changeCss(url: string) {
-    // this.url = 'home';
   }
 
 }

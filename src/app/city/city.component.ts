@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { City } from '../domain/city';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CityService } from '../services/city.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-city',
@@ -10,13 +12,19 @@ import { CityService } from '../services/city.service';
 })
 export class CityComponent implements OnInit {
   city: City;
+  url: string;
+  data: Observable<any>;
 
-  constructor(private activedRoute: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
-              private cityService: CityService) { }
+              private cityService: CityService) {
+
+    this.data = this.activatedRoute.url;
+
+  }
 
   ngOnInit() {
-      this.activedRoute.params.subscribe(
+      this.activatedRoute.params.subscribe(
         data => this.onParamChange(data)
       );
   }
