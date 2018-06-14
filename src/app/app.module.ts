@@ -10,6 +10,10 @@ import { CourseComponent } from './course/course.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { routing } from './app.routing';
 import { RestrictedAreaGuard } from './guards/restricted-area.guard';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 // import { StoreModule } from './store/store.module';
 
 @NgModule({
@@ -22,7 +26,7 @@ import { RestrictedAreaGuard } from './guards/restricted-area.guard';
     NotFoundComponent
   ],
   imports: [
-    BrowserModule, RouterModule, routing
+    BrowserModule, RouterModule, routing, BrowserAnimationsModule
   ],
   providers: [ RestrictedAreaGuard ],
   bootstrap: [AppComponent]

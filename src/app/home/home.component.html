@@ -1,3 +1,13 @@
 <p>
   Pagina de inicio.
 </p>
+
+
+<ul>
+  <li *ngFor="let p of personas"  class="element" 
+     [@voto]="p.estado"
+
+      (click)="select(p)">
+    {{ p.name }}  {{p.select ? 'Sí': 'No' }}  <button (click)="borra(p)">Borrar</button>
+  </li>
+</ul>
