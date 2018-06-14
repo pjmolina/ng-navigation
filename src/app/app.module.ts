@@ -9,6 +9,7 @@ import { CityComponent } from './city/city.component';
 import { CourseComponent } from './course/course.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { routing } from './app.routing';
+import { RestrictedAreaGuard } from './guards/restricted-area.guard';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { routing } from './app.routing';
   imports: [
     BrowserModule, RouterModule, routing
   ],
-  providers: [],
+  providers: [ RestrictedAreaGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

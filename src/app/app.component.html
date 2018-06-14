@@ -2,7 +2,7 @@
   Debug de ruta: {{ url }}
   <nav>
     <a [routerLink]="['home']"  [class.selected]="url === '/home'" >Inicio</a> |
-    <a [routerLink]="['about']" [ngClass]="{ 'selected': (url === '/about') }" >Acerca de...</a> |
+    <a [routerLink]="['about']" [ngClass]="{ 'selected': (url === '/about') }" >Zona restringida</a> |
     <a [routerLink]="['cities/MAD']" [class.selected]="url === '/cities/MAD'">Madrid</a> |
     <a [routerLink]="['cities/ALC']" [class.selected]="url === '/cities/ALC'">Alicante</a> |
     <a [routerLink]="['courses/1']"  [class.selected]="url === '/courses/1'">Curso 1. Nanotecnologia</a> |

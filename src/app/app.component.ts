@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   url: string;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+    //  '/'
   }
 
   ngOnInit() {
